@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    h1= title
+    .form-container
+      p Enter a YouTube URL to download the video:
+      form(method='GET', action='/download')
+        .input-group
+          input(type='text', name='url', placeholder='https://www.youtube.com/watch?v=...', required)
+          button(type='submit') Download Video
+    
+    .info-section
+      h2 Navigation
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/about') About
+        li
+          a(href='/contact') Contact
+      
+    .instructions
+      h2 Instructions
+      ol
+        li Paste a YouTube video URL in the input field above
+        li Click the "Download Video" button
+        li The video will start downloading in MP4 format
+        li Your browser will save the file to your downloads folder
